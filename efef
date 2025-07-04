@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wi-Fi AutoFill</title>
+    <script>
+        // Данные вашей Wi-Fi сети
+        const ssid = "Ваш_SSID";
+        const password = "Ваш_пароль";
+        
+        // Копируем пароль в буфер обмена
+        navigator.clipboard.writeText(password)
+            .then(() => {
+                // Открываем настройки Wi-Fi iOS
+                window.location.href = "App-Prefs:root=WIFI";
+                // Альтернатива для новых версий iOS: 
+                // window.location.href = "App-Prefs:root=WIFI&path=Network";
+            });
+    </script>
+</head>
+<body>
+    <h1>Подключение к Wi-Fi...</h1>
+    <p>Пароль скопирован! Перейдите в настройки → Wi-Fi → выберите сеть «{{ssid}}» → вставьте пароль.</p>
+</body>
+</html>
